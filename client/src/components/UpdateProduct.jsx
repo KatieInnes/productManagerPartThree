@@ -3,13 +3,13 @@ import axios from 'axios'
 import { useParams, useNavigate, } from "react-router-dom";
 
 const Update = (props) => {
-    const [title, setTitle] = useState("");
-    const [price, setPrice] = useState("");
-    const [description, setDescription] = useState("");
+    const {id} = useParams();
+
+    const [title, setTitle] = useState();
+    const [price, setPrice] = useState();
+    const [description, setDescription] = useState();
 
     const navigate = useNavigate();
-
-    const {id} = useParams();
 
     useEffect(() => {
         axios.get("http://localhost:8000/api/products/" + id)
@@ -24,14 +24,14 @@ const Update = (props) => {
 
     const updateProduct = (e) => {
         e.preventDefault();
-        axios.put("http://localhost:8000/api/products" + id, {
+        axios.put("http://localhost:8000/api/products/" + id, {
             title,
             price,
             description
         })
         .then(res => {
             console.log(res)
-            navigate("/api/products");
+            navigate("/");
         })
         .catch(err => console.log(err))
     }
