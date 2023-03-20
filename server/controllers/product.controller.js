@@ -44,7 +44,7 @@ module.exports.updateExistingProduct = (req, res) => {
 
 
 module.exports.deleteAnExistingProduct = (req, res) => {
-    Product.remove({ _id: req.params.id })
+    Product.deleteOne({ _id: req.params.id })
         .then(deleteConfirmation => {
             res.json(deleteConfirmation)
         })
