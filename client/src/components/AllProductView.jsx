@@ -27,6 +27,7 @@ const AllProductView = (props) => {
                     <div key={index}>
                         <div>
                             <Link to={`/product/${product._id}`}>{product.title}</Link>
+                            {/* <Link to={`/product/edit/${product._id}`}>{product.title}</Link> */}
                         </div>
                     </div>
                 ))

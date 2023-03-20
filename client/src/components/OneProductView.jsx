@@ -16,7 +16,7 @@ const OneProductView = (props) => {
 
   return (
     <div>
-      <h3>Product Name: {oneProduct.title}</h3>
+      <h3>{oneProduct.title}</h3>
       <p>Price: ${oneProduct.price}</p>
       <p>Description: {oneProduct.description}</p>
     </div>
