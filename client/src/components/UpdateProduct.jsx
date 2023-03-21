@@ -5,9 +5,9 @@ import { useParams, useNavigate, } from "react-router-dom";
 const Update = (props) => {
     const {id} = useParams();
 
-    const [title, setTitle] = useState();
-    const [price, setPrice] = useState();
-    const [description, setDescription] = useState();
+    const [title, setTitle] = useState("");
+    const [price, setPrice] = useState("");
+    const [description, setDescription] = useState("");
 
     const navigate = useNavigate();
 

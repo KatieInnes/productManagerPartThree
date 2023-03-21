@@ -11,14 +11,13 @@ const ProductForm = (props) => {
     const createProduct = (e) => {
         e.preventDefault();
 
-        savedFormItem([...thingTypedInForm, { title, price, description }]);
-
         axios.post('http://localhost:8000/api/products', {
             title,
             price,
             description,
         }).then(res => {
-            console.log('res', res)
+            savedFormItem([...thingTypedInForm, res.data.product]);
+
             setTitle("");
             setPrice("");
             setDescription("");

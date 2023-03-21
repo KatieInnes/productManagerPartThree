@@ -11,7 +11,7 @@ const AllProductView = (props) => {
         .then((res)=>{
             
             if (res && res.data && res.data.products) {
-                console.log(res);
+                //console.log(res);
                 savedFormItem(res.data.products);
             }
     })
